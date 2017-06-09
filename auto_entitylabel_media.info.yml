@@ -1,0 +1,9 @@
+name: 'Auto Entity Label - Media'
+description: 'Provides support for auto entity label functionality on Media entities.'
+type: module
+version: 8.x-2.0
+core: 8.x
+
+dependencies:
+  - auto_entitylabel
+  - media_entity

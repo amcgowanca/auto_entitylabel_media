@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Provides support for auto entity label functionality on Media entities.
+ */
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function auto_entitylabel_media_entity_type_alter(&$entity_types) {
+  /** @var $entity_types \Drupal\Core\Entity\EntityTypeInterface[] */
+  if (isset($entity_types['media_bundle'])) {
+    $entity_types['media_bundle']->setLinkTemplate('auto-label',
+      $entity_types['media_bundle']->getLinkTemplate('edit-form') . '/auto-label');
+  }
+}
